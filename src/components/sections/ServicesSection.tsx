@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/atoms/button";
 import { Globe, ShoppingCart, Settings, Smartphone, ArrowRight, Check } from "lucide-react";
+import { heading, container, section } from "@/lib/utils/styles";
 
 const services = [
   {
@@ -71,14 +72,14 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={section("bg-background")}>
+      <div className={container()}>
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className={heading.h2("text-foreground mb-4")}>
             Nuestros Servicios
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
             Soluciones digitales diseñadas para PYMEs, con precios transparentes y sin letra chica
           </p>
         </div>
@@ -91,46 +92,46 @@ export function ServicesSection() {
             return (
               <div
                 key={index}
-                className={`bg-white rounded-2xl p-6 border-2 ${
+                className={`bg-background rounded-2xl p-6 border-2 ${
                   service.highlight
-                    ? "border-brand-blue-500 shadow-xl scale-105"
-                    : "border-gray-200 hover:border-brand-cyan-300"
+                    ? "border-primary shadow-xl scale-105"
+                    : "border-border hover:border-primary/30"
                 } transition-all duration-300`}
               >
                 {service.highlight && (
-                  <div className="bg-brand-blue-500 text-white text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
+                  <div className="bg-primary text-white text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
                     Más Popular
                   </div>
                 )}
 
                 {/* Icon */}
-                <div className="inline-flex p-3 bg-brand-cyan-50 rounded-xl mb-4">
-                  <Icon className="w-6 h-6 text-brand-cyan-600" />
+                <div className="inline-flex p-3 bg-primary/10 rounded-xl mb-4">
+                  <Icon className="w-6 h-6 text-primary" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">{service.title}</h3>
 
                 {/* Tagline */}
-                <p className="text-sm font-medium text-brand-blue-600 mb-3">{service.tagline}</p>
+                <p className="text-sm font-medium text-secondary mb-3">{service.tagline}</p>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm mb-6">{service.description}</p>
+                <p className="text-foreground/70 text-sm mb-6">{service.description}</p>
 
                 {/* Features */}
                 <ul className="space-y-2 mb-6">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
-                      <Check className="w-4 h-4 text-brand-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-600">{feature}</span>
+                      <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/70">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Price */}
                 <div className="mb-6">
-                  <div className="text-2xl font-bold text-gray-900">{service.price}</div>
-                  {service.period && <div className="text-sm text-gray-500">{service.period}</div>}
+                  <div className="text-2xl font-bold text-foreground">{service.price}</div>
+                  {service.period && <div className="text-sm text-foreground/60">{service.period}</div>}
                 </div>
 
                 {/* CTA */}

@@ -1,67 +1,46 @@
 "use client";
 
 import { TrendingUp, Clock, Rocket } from "lucide-react";
+import { heading, container, section, cardHover } from "@/lib/utils/styles";
 
 const benefits = [
   {
     icon: TrendingUp,
     title: "Vende Mientras Duermes",
-    description:
-      "Tu negocio disponible las 24 horas, los 7 días de la semana. Los clientes pueden ver tus productos, hacer pedidos y pagar con tarjeta en cualquier momento, desde cualquier lugar. No pierdes ninguna venta por estar cerrado.",
-    metric: "+35% de ventas en promedio",
-    color: "cyan",
+    description: "Tu negocio abierto 24/7. Los clientes compran cuando quieren, sin que estés presente.",
+    metric: "+35%",
+    metricLabel: "de ventas en promedio",
+    color: "primary",
   },
   {
     icon: Clock,
     title: "Recupera Tu Tiempo Valioso",
-    description:
-      "Automatiza tareas repetitivas como tomar pedidos por teléfono, agendar citas, actualizar inventario o enviar recordatorios. Dedica tu tiempo a hacer crecer el negocio, no a tareas administrativas.",
-    metric: "10-15 horas ahorradas por semana",
-    color: "blue",
+    description: "Automatiza tareas repetitivas. Dedica tu tiempo a hacer crecer el negocio.",
+    metric: "10-15 hrs",
+    metricLabel: "ahorradas por semana",
+    color: "secondary",
   },
   {
     icon: Rocket,
-    title: "Profesionalismo al Nivel de las Grandes Marcas",
-    description:
-      "Proyecta una imagen profesional con una presencia digital moderna. Tus clientes te verán al mismo nivel que las grandes empresas, sin importar el tamaño de tu negocio. La tecnología ya no es solo para los grandes.",
-    metric: "Mejora percepción de marca en 90%",
-    color: "green",
+    title: "Profesionalismo de Gran Empresa",
+    description: "Compite con las grandes marcas. Da una imagen moderna y confiable a tus clientes.",
+    metric: "90%",
+    metricLabel: "mejora en percepción",
+    color: "accent",
   },
 ];
 
-const colorClasses = {
-  cyan: {
-    bg: "bg-brand-cyan-50",
-    icon: "text-brand-cyan-600",
-    border: "border-brand-cyan-200",
-    metric: "text-brand-cyan-700",
-  },
-  blue: {
-    bg: "bg-brand-blue-50",
-    icon: "text-brand-blue-600",
-    border: "border-brand-blue-200",
-    metric: "text-brand-blue-700",
-  },
-  green: {
-    bg: "bg-brand-green-50",
-    icon: "text-brand-green-600",
-    border: "border-brand-green-200",
-    metric: "text-brand-green-700",
-  },
-};
-
 export function BenefitsSection() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={section("bg-muted")}>
+      <div className={container()}>
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            ¿Por Qué Elegir ARKIA?
+          <h2 className={heading.h2("text-foreground mb-4")}>
+            ¿Por Qué Tu Negocio Necesita Presencia Digital?
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transformamos tu negocio con soluciones digitales que generan resultados reales y
-            medibles
+          <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+            No es solo tener una página web. Es transformar cómo trabajas y vendes.
           </p>
         </div>
 
@@ -69,26 +48,31 @@ export function BenefitsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
-            const colors = colorClasses[benefit.color as keyof typeof colorClasses];
+            const colorClass = benefit.color;
 
             return (
               <div
                 key={index}
-                className={`${colors.bg} ${colors.border} border-2 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300`}
+                className={cardHover("bg-background rounded-2xl p-8 border-2 border-border")}
               >
                 {/* Icon */}
-                <div className={`inline-flex p-4 ${colors.bg} rounded-xl mb-6`}>
-                  <Icon className={`w-8 h-8 ${colors.icon}`} />
+                <div className={`inline-flex p-4 bg-${colorClass}/10 rounded-xl mb-6`}>
+                  <Icon className={`w-8 h-8 text-${colorClass}`} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                <h3 className={heading.h4("text-foreground mb-3")}>{benefit.title}</h3>
 
                 {/* Description */}
-                <p className="text-gray-600 mb-6 leading-relaxed">{benefit.description}</p>
+                <p className="text-foreground/70 mb-6">{benefit.description}</p>
 
                 {/* Metric */}
-                <div className={`font-semibold ${colors.metric} text-lg`}>{benefit.metric}</div>
+                <div className={`bg-${colorClass}/5 rounded-xl p-4`}>
+                  <div className={`text-3xl font-bold text-${colorClass} mb-1`}>
+                    {benefit.metric}
+                  </div>
+                  <div className="text-sm text-foreground/60">{benefit.metricLabel}</div>
+                </div>
               </div>
             );
           })}
