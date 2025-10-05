@@ -3,7 +3,7 @@
 ## 📋 Estado General del Proyecto
 
 - **Fecha de inicio**: Enero 2025
-- **Estado actual**: ✅ M0 Completado | 🎯 M1 - SIGUIENTE
+- **Estado actual**: ✅ M0-M1 Completados | 🎯 M2 - SIGUIENTE
 - **Enfoque**: Landing comercial PYME + Portal Cliente + Admin Panel
 - **Total de partes**: 3 (Landing, Portal, Admin)
 - **Duración estimada total**: 14-20 semanas
@@ -63,17 +63,19 @@
 
 ---
 
-## 🏗️ M1: Project Foundation (1 semana)
-**Estado**: ⏳ Pendiente
+## ✅ M1: Project Foundation (COMPLETADO)
+**Duración**: 1 semana
+**Estado**: ✅ **COMPLETADO**
+**Fecha**: Enero 2025
 
 ### Frontend Setup
-- [ ] Inicializar proyecto Next.js 15+
-- [ ] Configurar TypeScript
-- [ ] Instalar Tailwind CSS v4
-- [ ] Configurar shadcn/ui
-- [ ] Setup ESLint + Prettier
-- [ ] Configurar Husky (pre-commit hooks)
-- [ ] Instalar Framer Motion
+- [x] Inicializar proyecto Next.js 15+
+- [x] Configurar TypeScript
+- [x] Instalar Tailwind CSS v4
+- [x] Configurar shadcn/ui
+- [x] Setup ESLint + Prettier
+- [ ] Configurar Husky (pre-commit hooks) - Pendiente para M2
+- [x] Instalar Framer Motion
 
 ### Estructura de Carpetas
 ```
@@ -90,20 +92,24 @@ src/
 └── styles/           # Global styles
 ```
 
-- [ ] Crear estructura de carpetas
-- [ ] Configurar path aliases (@/)
-- [ ] Setup de fonts (Inter, JetBrains Mono)
+- [x] Crear estructura de carpetas
+- [x] Configurar path aliases (@/)
+- [x] Setup de fonts (Inter)
 
 ### Layout Base
-- [ ] Layout principal
-- [ ] Navbar básico
-- [ ] Footer básico
-- [ ] Page wrapper
-- [ ] Metadata SEO base
+- [x] Layout principal
+- [x] Navbar básico
+- [x] Footer básico
+- [x] Page wrapper
+- [x] Metadata SEO base
+
+### Componentes Base
+- [x] Button component (shadcn/ui style)
+- [x] Utils (cn function)
 
 ### Testing Setup
-- [ ] Configurar testing (si aplica)
-- [ ] Scripts de npm (dev, build, start)
+- [ ] Configurar testing (pendiente para M2)
+- [x] Scripts de npm (dev, build, start, lint)
 
 ---
 
@@ -852,19 +858,28 @@ src/
   - Estructura de carpetas creada
   - Archivos base configurados
 
+- ✅ M1: Project Foundation
+  - Next.js 15.5.4 configurado
+  - TypeScript + Tailwind CSS v4
+  - shadcn/ui base
+  - ESLint + Prettier
+  - Framer Motion instalado
+  - Navbar y Footer básicos
+  - Layout principal
+
 ### En Progreso
 - Ninguno actualmente
 
 ### Pendiente
-- ⏳ M1: Project Foundation (SIGUIENTE)
-- ⏳ M2-M24
+- ⏳ M2: Contenido y Mensaje Comercial (SIGUIENTE)
+- ⏳ M3-M24
 
 ---
 
 **Última actualización**: Enero 2025
 **Versión**: 4.0 - RESET COMPLETO
-**Estado**: ✅ M0 Completado | 🎯 M1 SIGUIENTE
+**Estado**: ✅ M0-M1 Completados | 🎯 M2 SIGUIENTE
 **Total milestones**: 25 (M0-M24)
 **Duración estimada**: 14-20 semanas
-**Progreso**: 1/25 milestones (4%)
-**Próximo paso**: M1 - Project Foundation (Next.js + Tailwind + shadcn/ui)
+**Progreso**: 2/25 milestones (8%)
+**Próximo paso**: M2 - Contenido y Mensaje Comercial
