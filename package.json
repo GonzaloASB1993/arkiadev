@@ -1,0 +1,23 @@
+{
+  "name": "arkia",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Más Clientes para tu Negocio con Presencia Digital",
+  "author": "ARKIA Team",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
